@@ -2,9 +2,11 @@
 
 An agent that fails, explains why in plain words, fixes it, and proves the answer.
 
+**Total: 106, verified — from 6 numbers, after the agent found and fixed the bad line itself.**
+
 ## Demo video
 
-> TODO — record the 1–5 minute demo video (see `VIDEO-SCRIPT.md`) and paste the public link here.
+> TODO — record the 1–5 minute demo video (see `VIDEO-SCRIPT.md`) and paste the public link here. Raw footage received 26 Nov 2026 (transcript scroll); final video build pending.
 
 ## What it does and why
 
@@ -15,6 +17,26 @@ via Ollama. No paid service, no API key, no cloud.
 
 The one workflow below is the whole demo: a dirty input file, one failure,
 one plain-language diagnosis, one fix, and a verified total of 106.
+
+## Hackathon Requirements Met
+
+Cortensor Hackathon #5, DoraHacks — prize $1,150, deadline 18 Dec 2026. Each requirement, with proof:
+
+- [x] Build complete and verified — demo run PASS, total 106, transcript saved (`demo-transcript.md`, run 2026-11-23, all six steps first try).
+- [x] 5 unit tests, no model needed (`tests/test_diagnosis.py`).
+- [x] README with tagline, demo-video slot, what/why, tech stack, try-it-yourself, honest limits (this file).
+- [ ] Demo video, 1–5 min — script in `VIDEO-SCRIPT.md`; raw footage received 26 Nov 2026, final video build pending.
+- [ ] Submission PR — **BLOCKED: the dedicated Hackathon #5 repository URL is still listed as "will be added before kickoff" in the official docs.** Nothing can be submitted until Cortensor publishes it.
+- [ ] DoraHacks BUIDL page kept up to date once the PR exists.
+
+Demo failure-proofing: the video is built from the verified transcript (`demo-transcript.md`, run 2026-11-23, all six steps first try), not from a fresh live run — the 9-minute run is trimmed to the 60 seconds that matter (fail, "twelve", fix, 106). The demo never depends on the model improvising on camera.
+
+## Judging Highlights
+
+- **Innovation:** an agent that fails, explains why in plain words, fixes it, and proves the answer — the diagnosis is grounded in the real file, never invented.
+- **Technical execution:** the real OpenMinion 0.1 SDK driving a local Ollama model (`qwen2.5:0.5b`, no key, no cloud); deterministic diagnosis logic, unit-tested; 5 unit tests that need no model.
+- **Impact:** self-diagnosing agents that explain themselves in plain language — the failure, the cause, the fix, the proof — instead of failing silently.
+- **Completeness:** the one workflow runs end to end and is verified (total 106 in `out/total.txt`); the transcript is committed; the scaffolding the tiny model needs is stated plainly, not hidden.
 
 ## Tech stack
 
